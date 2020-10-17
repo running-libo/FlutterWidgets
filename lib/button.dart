@@ -24,9 +24,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
-
-  MyHomePage({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +31,7 @@ class MyHomePage extends StatelessWidget {
       children: <Widget>[
 
         FloatingActionButton(
-          child: Text("FloatingActionButton"),
+          child: Text("+", style: TextStyle(fontSize: 30)),
           onPressed: () {
             print("FloatingActionButton Click");
           },
@@ -58,6 +55,18 @@ class MyHomePage extends StatelessWidget {
           child: Text("OutlineButton"),
           onPressed: () {
             print("OutlineButton Click");
+          },
+        ),
+
+        RaisedButton(
+          child: Text("登录",
+            style: TextStyle(color:Colors.white),
+          ),
+          color: Colors.red,
+          highlightColor: Colors.red[600],  //添加按下背景
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),  //设置圆角
+          onPressed: () {
+            print("登录");
           },
         )
       ],
